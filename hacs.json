@@ -1,5 +1,5 @@
 {
   "name": "Comfoair ventilation lovelace component",
-  "content_in_root": true,
-  "render_readme": true
+  "render_readme": true,
+  "filename": "dist/comfoair-card.js"
 }
