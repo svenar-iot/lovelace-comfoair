@@ -20,19 +20,19 @@ class ComfoAirCard extends LitElement {
       <div class="bg">
           <div class="flex-container">
               <div class="flex-col-out">
-                  <div>${this.hass.states['sensor.comfoair_outside_air_temperature'].state}°C</div>
-                  <div class="fan-state"><ha-icon icon="mdi:speedometer"></ha-icon></ha-icon> ${Math.trunc(this.hass.states['sensor.comfoair_intake_fan_speed_rpm'].state)} rpm</div>
-                  <div>${this.hass.states['sensor.comfoair_exhaust_air_temperature'].state}°C</div>
-                  <div class="fan-state"><ha-icon icon="mdi:speedometer"></ha-icon> ${Math.trunc(this.hass.states['sensor.comfoair_exhaust_fan_speed_rpm'].state)} rpm</div>
+                  <div>${this.hass.states['sensor.comfoair_outside_temperature'].state}°C</div>
+                  <div class="fan-state"><ha-icon icon="mdi:speedometer"></ha-icon></ha-icon> ${Math.trunc(this.hass.states['sensor.comfoair_intake_fan_rpm'].state)} rpm</div>
+                  <div>${this.hass.states['sensor.comfoair_exhaust_temperature'].state}°C</div>
+                  <div class="fan-state"><ha-icon icon="mdi:speedometer"></ha-icon> ${Math.trunc(this.hass.states['sensor.comfoair_exhaust_fan_rpm'].state)} rpm</div>
               </div>
               <div class="flex-col-main">
                   <div>${this.hass.states[this.config.entity].attributes.temperature}°C</div>
                   <div><ha-icon class="spin" icon="mdi:${({'auto': 'fan', 'off': 'fan-off', low: 'fan-speed-1', medium: 'fan-speed-2', high: 'fan-speed-3'}[this.hass.states[this.config.entity].attributes.fan_mode])}"></ha-icon></div>
               </div>
               <div class="flex-col-in">
-                  <div>${this.hass.states['sensor.comfoair_return_air_temperature'].state}°C</div>
+                  <div>${this.hass.states['sensor.comfoair_return_temperature'].state}°C</div>
                   <div class="fan-state"><ha-icon icon="mdi:fan"></ha-icon> ${Math.trunc(this.hass.states['sensor.comfoair_return_air_level'].state)}%</div>
-                  <div>${this.hass.states['sensor.comfoair_supply_air_temperature'].state}°C</div>
+                  <div>${this.hass.states['sensor.comfoair_supply_temperature'].state}°C</div>
                   <div class="fan-state"><ha-icon icon="mdi:fan"></ha-icon> ${Math.trunc(this.hass.states['sensor.comfoair_supply_air_level'].state)}%</div>
               </div>
           </div>
@@ -66,7 +66,7 @@ class ComfoAirCard extends LitElement {
   }
 
   getBypassTmpl(){
-    if(this.hass.states['binary_sensor.comfoair_bypass_valve_open'].state == 'on'){
+    if(this.hass.states['binary_sensor.comfoair_bypass_open'].state == 'on'){
       return html`<ha-icon icon="mdi:electric-switch"></ha-icon>`;
     }else{
       return html`<ha-icon class="inactive" icon="mdi:electric-switch"></ha-icon>`;
