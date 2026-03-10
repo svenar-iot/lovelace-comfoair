@@ -105,7 +105,7 @@ class ComfoAirCard extends LitElement {
       padding: 10px;
     }
     .bg {
-      background-image: url(/local/lovelace-comfoair/comfoair_heat.png);
+      background-image: url(/hacsfiles/lovelace-comfoair/comfoair_heat.png);
       height: 200px;
       background-size: contain;
       background-repeat: no-repeat;
