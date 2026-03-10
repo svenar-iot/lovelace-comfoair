@@ -1,6 +1,6 @@
 # Homeassistant Lovelace Comfoair card
 
-Use https://github.com/wichers/esphome-comfoair to connect your ComfoAir to Homeassistant and then use this lovelace card to visualize your data!
+Use [https://github.com/svenar-iot/esphome-comfoair](https://github.com/svenar-iot/esphome-comfoair) to connect your ComfoAir to Homeassistant and then use this lovelace card to visualize your data!
 
 ![Image](https://raw.githubusercontent.com/wichers/lovelace-comfoair/master/result.png)
 
@@ -24,7 +24,7 @@ resources:
 
 If you prefer to manage the card via HACS:
 
-1. Open HACS in Home Assistant and add `https://github.com/wichers/lovelace-comfoair` as a **Custom Repository** in the *Lovelace* category.
+1. Open HACS in Home Assistant and add `https://github.com/svenar-iot/lovelace-comfoair` as a **Custom Repository** in the **Dashboard** category.
 2. Find **Comfoair ventilation lovelace component** in the list of custom repositories and install it.
 3. Make sure the following resource is added to your configuration:
    ```yaml
